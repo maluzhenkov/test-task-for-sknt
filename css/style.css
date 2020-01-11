@@ -17,7 +17,7 @@ body {
   border-radius: 8px;
 }
 
-.alert__error {
+.alert_error {
   background-color: orangered;
   color: white;
 }
@@ -44,7 +44,7 @@ body {
   flex: 0 0 100%;
   max-width: 100%;
 }
-.slider__item_header {
+.slider__header {
   position: relative;
   background-color: #f7f7f8;
   padding-top: 1em;
@@ -119,7 +119,7 @@ body {
   padding-bottom: 0.8em;
   border-bottom: 1px solid silver;
 }
-.card__header_title {
+.card__title {
   margin: 0;
   color: yellowgreen;
   font-weight: bold;
@@ -150,7 +150,7 @@ body {
   -webkit-transform: translateY(-50%) rotate(-45deg);
   transform: translateY(-50%) rotate(-45deg);
 }
-.card__body_speed {
+.card__speed {
   position: relative;
   color: white;
   font-weight: bold;
@@ -158,7 +158,7 @@ body {
   padding: 0.8em 0.4em 0.6em 0;
   line-height: 1;
 }
-.card__body_speed::before {
+.card__speed::before {
   display: block;
   content: "";
   position: absolute;
@@ -167,46 +167,31 @@ body {
   bottom: 0;
   left: -100%;
 }
-.card__body_period {
+.card__period {
   font-weight: bold;
 }
-.slider__item_first .slider__item_body .col:nth-child(1) .card__body_speed,
-.slider__item_first
-  .slider__item_body
-  .col:nth-child(1)
-  .card__body_speed::before {
+.slider__item_first .slider__body .col:nth-child(1) .card__speed,
+.slider__item_first .slider__body .col:nth-child(1) .card__speed::before {
   background-color: darkolivegreen;
 }
-.slider__item_first .slider__item_body .col:nth-child(2) .card__body_speed,
-.slider__item_first
-  .slider__item_body
-  .col:nth-child(2)
-  .card__body_speed::before {
+.slider__item_first .slider__body .col:nth-child(2) .card__speed,
+.slider__item_first .slider__body .col:nth-child(2) .card__speed::before {
   background-color: dodgerblue;
 }
-.slider__item_first .slider__item_body .col:nth-child(3) .card__body_speed,
-.slider__item_first
-  .slider__item_body
-  .col:nth-child(3)
-  .card__body_speed::before {
+.slider__item_first .slider__body .col:nth-child(3) .card__speed,
+.slider__item_first .slider__body .col:nth-child(3) .card__speed::before {
   background-color: rgb(255, 136, 0);
 }
-.slider__item_first .slider__item_body .col:nth-child(4) .card__body_speed,
-.slider__item_first
-  .slider__item_body
-  .col:nth-child(4)
-  .card__body_speed::before {
+.slider__item_first .slider__body .col:nth-child(4) .card__speed,
+.slider__item_first .slider__body .col:nth-child(4) .card__speed::before {
   background-color: rgb(31, 15, 252);
 }
-.slider__item_first .slider__item_body .col:nth-child(5) .card__body_speed,
-.slider__item_first
-  .slider__item_body
-  .col:nth-child(5)
-  .card__body_speed::before {
+.slider__item_first .slider__body .col:nth-child(5) .card__speed,
+.slider__item_first .slider__body .col:nth-child(5) .card__speed::before {
   background-color: orangered;
 }
 
-.card__body_price {
+.card__price {
   padding-top: 0.8em;
   font-weight: bold;
 }
@@ -218,12 +203,12 @@ body {
   padding-right: 1em;
 }
 
-.card__footer_link {
+.card__link {
   text-transform: lowercase;
   color: dodgerblue;
   text-decoration: none;
 }
-.card__footer_link:hover {
+.card__link:hover {
   text-decoration: underline;
 }
 .options {
@@ -231,14 +216,14 @@ body {
   margin: 0;
   padding: 0;
 }
-.card__body_options {
+.card__options {
   padding-top: 0.8em;
 }
-.card__body_options_muted {
+.card__options_muted {
   color: #aaaaaa;
 }
 
-.slider__item_body {
+.slider__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,12 +234,12 @@ body {
   justify-content: center;
 }
 
-.slider__item_body .col {
+.slider__body .col {
   width: 100%;
 }
 
 @media (min-width: 640px) {
-  .slider__item_body .col {
+  .slider__body .col {
     padding: 0 15px;
     width: 50%;
     padding-bottom: 1.5rem;
@@ -265,7 +250,7 @@ body {
   }
 }
 @media (min-width: 1024px) {
-  .slider__item_body .col {
+  .slider__body .col {
     padding: 0 15px;
     width: 33.3336%;
     padding-bottom: 1.5rem;
@@ -273,5 +258,10 @@ body {
   .card {
     height: 100%;
     margin-bottom: 0;
+    transition: all 0.3s;
+  }
+  .card:hover {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
   }
 }

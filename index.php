@@ -10,13 +10,13 @@
   <body>
     <div id="app">
       <div id="slider" class="slider">
-        <div class="alert alert__error" v-if="error">{{error}}</div>
+        <div class="alert alert_error" v-if="error">{{error}}</div>
         <!-- slider Wrapper -->
         <div class="slider__wrapper" ref="wrapper" v-else>
           <!-- First Step -->
           <div class="slider__item slider__item_first">
-            <div class="slider__item_header"><h2 class="title">Тарифы</h2></div>
-            <div class="slider__item_body">
+            <div class="slider__header"><h2 class="title">Тарифы</h2></div>
+            <div class="slider__body">
               <div
                 class="col"
                 v-for="(tariff, idx) in tariffs"
@@ -24,20 +24,20 @@
               >
                 <div class="card">
                   <div class="card__header">
-                    <h3 class="card__header_title">Тариф "{{tariff.title}}"</h3>
+                    <h3 class="card__title">Тариф "{{tariff.title}}"</h3>
                   </div>
                   <div
                     class="card__body slider__control slider__control_right"
                     @click="nextStep(tariff)"
                   >
-                    <div class="card__body_speed">{{tariff.speed}} Мбит/с</div>
-                    <div class="card__body_price">
+                    <div class="card__speed">{{tariff.speed}} Мбит/с</div>
+                    <div class="card__price">
                       {{tariff.tarifs[tariff.tarifs.length - 1].price /
                       tariff.tarifs[tariff.tarifs.length - 1].pay_period}} -
                       {{tariff.tarifs[0].price}} ₽/мес
                     </div>
                     <ul
-                      class="card__body_options options"
+                      class="card__options options"
                       v-if="tariff.free_options"
                     >
                       <li
@@ -50,7 +50,7 @@
                     </ul>
                   </div>
                   <div class="card__footer">
-                    <a class="card__footer_link" :href="tariff.link"
+                    <a class="card__link" :href="tariff.link"
                       >Узнать подробнее на сайте www.sknt.ru</a
                     >
                   </div>
@@ -61,7 +61,7 @@
 
           <!-- Two Step -->
           <div class="slider__item slider__item_second">
-            <div class="slider__item_header">
+            <div class="slider__header">
               <div
                 class="slider__control slider__control_left"
                 v-on:click="prevStep($event)"
@@ -71,7 +71,7 @@
                 Тариф "{{currentTariff.title}}"
               </h2>
             </div>
-            <div class="slider__item_body">
+            <div class="slider__body">
               <div
                 class="col"
                 v-for="(tariff, idx) in currentTariff.tarifs"
@@ -79,7 +79,7 @@
               >
                 <div class="card">
                   <div class="card__header">
-                    <h3 class="card__header_title">
+                    <h3 class="card__title">
                       {{tariff.pay_period}} {{tariff.pay_period | declOfNum}}
                     </h3>
                   </div>
@@ -87,10 +87,10 @@
                     class="card__body slider__control slider__control_right"
                     @click="lastStep(tariff)"
                   >
-                    <div class="card__body_price">
+                    <div class="card__price">
                       {{tariff.price / tariff.pay_period}} ₽/мес
                     </div>
-                    <ul class="card__body_options options">
+                    <ul class="card__options options">
                       <li class="options__item">
                         Разовый платёж — {{tariff.price}} ₽
                       </li>
@@ -107,28 +107,28 @@
 
           <!-- Three Step -->
           <div class="slider__item slider__item_three">
-            <div class="slider__item_header">
+            <div class="slider__header">
               <div
                 class="slider__control slider__control_left"
                 v-on:click="prevStep"
               ></div>
               <h2 class="title">Выбор тарифа</h2>
             </div>
-            <div class="slider__item_body">
+            <div class="slider__body">
               <div class="col">
                 <div class="card">
                   <div class="card__header">
-                    <h3 class="card__header_title">
+                    <h3 class="card__title">
                       Тариф "{{currentTariff.title}}"
                     </h3>
                   </div>
                   <div class="card__body">
-                    <div class="card__body_period">
+                    <div class="card__period">
                       Период оплаты — {{currentPeriod.pay_period}}
                       {{currentPeriod.pay_period | declOfNum}} <br />
                       {{currentPeriod.price / currentPeriod.pay_period}} ₽/мес
                     </div>
-                    <ul class="card__body_options options">
+                    <ul class="card__options options">
                       <li class="options__item">
                         разовый платёж — {{currentPeriod.price}} ₽
                       </li>
@@ -137,7 +137,7 @@
                       </li>
                     </ul>
                     <ul
-                      class="card__body_options card__body_options_muted options "
+                      class="card__options card__options_muted options"
                     >
                       <li class="options__item">
                         Вступят в силу — сегодня
